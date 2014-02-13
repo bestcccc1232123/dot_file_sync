@@ -1,10 +1,15 @@
 
+# Add terminal color
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Set default svn editor
 export SVN_EDITOR=emacs
 
-# for rbenv
+
+# HomeBrew misc
 export RBENV_ROOT=/usr/local/var/rbenv
 
-# for rbenv: enable shims and autocompletion add to your profile:
+# rbenv
+# Initialize rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
