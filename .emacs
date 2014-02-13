@@ -44,7 +44,8 @@
 ;;; activate, otherwise, auto-complete will
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
-
+;;; auto complete clang
+;;; (require 'auto-complete-clang)
 
 
 ; for larger font size
