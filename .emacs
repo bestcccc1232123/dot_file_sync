@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/")
+
 ; for package.el to work
 (require 'package)
 (package-initialize)
@@ -56,7 +58,18 @@
 (set-face-attribute 'default nil :height 180)
 
 
-
-;;; for 80 char column
+; ===========================================================
+;          latex mode in emacs
+; ===========================================================
 (require 'column-marker)
+(add-hook 'LaTeX-mode-hook (lambda() (interactive) (column-marker-1 80)))
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
