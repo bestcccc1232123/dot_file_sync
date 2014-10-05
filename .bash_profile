@@ -1,7 +1,7 @@
 
 # Add terminal color
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export CLICOLOR=1
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Set default svn editor
 export SVN_EDITOR=emacs
