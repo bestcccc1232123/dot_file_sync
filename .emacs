@@ -32,6 +32,10 @@
 ; remap the return key 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 
+; 80 column width
+(setq-default fill-column 80)
+
+
 ; for auto pair the parathesis
 (require 'autopair)
 (autopair-global-mode 1)
@@ -53,13 +57,11 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 ;;; auto complete clang
-;;; (require 'auto-complete-clang)
-
+;(require 'auto-complete-clang)
+;(global-set-key (kbd "C-`") 'ac-complete-clang)
 
 ; for larger font size
 (set-face-attribute 'default nil :height 180)
-
-
 
 
 ; ===========================================================
@@ -76,6 +78,7 @@
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
+
 
 
 ; ===========================================================
