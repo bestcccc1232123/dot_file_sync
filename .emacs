@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 
 ; for package.el to work
 (require 'package)
@@ -10,8 +11,13 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ; for auctex to work with emacs
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (require 'tex-site)
+
+; for ido autocomplete for buffer
+(require 'ido)
+(ido-mode t)
+
+
 
 ; ===========================================================
 ;          C++ programming in emacs
@@ -70,3 +76,16 @@
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
+
+
+; ===========================================================
+;          python mode in emacs
+; ===========================================================
+(require 'column-marker)
+(add-hook 'python-mode-hook (lambda() (interactive) (column-marker-1 80)))
+; for python jedi used for auto-complete
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
+; for flycheck used for syntex checking in python
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
